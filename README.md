@@ -1,6 +1,6 @@
 Homepage
 
-![Template.html (github public version)](https://raw.githubusercontent.com/Boettner-eric/homepage/template.png)
+![Template.html (github public version)](template.png)
 
 This project is an attempt at a better desktop and mobile launch page.  It has keyboard shortcuts, nested folders, cool design and is easy to edit.
 
@@ -28,12 +28,13 @@ Features:
   To add a folder just copy the template.html file and rename it.  In the original add a tile for your folder and in the new html file just change the url of back to "template.html" or the url of the source page.  
 
 - Responsive design
-![Responsive layout](folder.png)
+![Responsive layout](responsive.png)
+
+- An example subfolder 
+
+![My setup w/ folders and icons](folder.png)
 
 
-![My setup w/ folders and icons](https://Boettner-eric.github.com/homepage/folder.png)
+* This is a fork of - https://github.com/Capuno/Decaux - My version is very different but started from this open source project
 
-
-
-
-All icons are from https://icons8.com [color theme]
+- All icons are from https://icons8.com [color theme]
