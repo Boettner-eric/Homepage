@@ -38,7 +38,7 @@ document.onkeydown = function(e) {
 
 	var key = e.keyCode;
 
-	if ( document.activeElement.id == "search" ) { // If search bar and key [ESC], go back to blocks.
+	if ( document.activeElement.id == "search" ) { // If search bar and key [ESC], return to tiles.
 		if ( key == 27 ) {
 			document.getElementById("search").value = '';
 			document.activeElement.blur();
@@ -48,7 +48,7 @@ document.onkeydown = function(e) {
 	}
 
 	if (!document.activeElement.id) {
-		// Keys for help and search still working even if no block selected, if it's another key, then select last block.
+		// Keys for help and search still working even if no tile is selected, if it's another key, then select last tile.
 		if ( key == 32 ) { // Key space, focus search bar and show [ESP] instruction.
 			document.getElementById("search").focus();
 		} else {
@@ -57,9 +57,9 @@ document.onkeydown = function(e) {
 		return;
 	}
 
-		/*	Mapped keys:    [ESC]               <---- Go back to blocks
+		/*	Mapped keys:    [ESC]               <---- Back
 		 *                        [w/^]
-		 *                  [a/<] [s/v] [d/>]   <---- Move between blocks
+		 *                  [a/<] [s/v] [d/>]   <---- Movement
 		 *                  [     space     ]   <---- Focus search
 		 *
 		 * Shortcuts:

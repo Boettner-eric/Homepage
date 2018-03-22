@@ -22,7 +22,7 @@ Features:
 		<h3>Back</h3>
                 <p>To the Future</p>
             </a>
-            
+
   h3 displays the website tittle, p the subtittle and "button" contains the image, just edit these and you have a new tile
 
   To add a folder just copy the template.html file and rename it.  In the original add a tile for your folder and in the new html file just change the url of back to "template.html" or the url of the source page.  
@@ -30,7 +30,7 @@ Features:
 - Responsive design
 ![Responsive layout](responsive.png)
 
-- An example subfolder 
+- An example subfolder
 
 ![My setup w/ folders and icons](folder.png)
 
