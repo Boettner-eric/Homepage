@@ -28,10 +28,10 @@ Features:
   To add a folder just copy the template.html file and rename it.  In the original add a tile for your folder and in the new html file just change the url of back to "template.html" or the url of the source page.  
 
 - Responsive design
-![Responsive layout](https://raw.githubusercontent.com/Boettner-eric/homepage/responsive.png)
+![Responsive layout](https://Boettner-eric.github.com/homepage/responsive.png)
 
 
-![My setup w/ folders and icons](https://raw.githubusercontent.com/Boettner-eric/homepage/folder.png)
+![My setup w/ folders and icons](https://Boettner-eric.github.com/homepage/folder.png)
 
 
 
