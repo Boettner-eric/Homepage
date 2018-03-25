@@ -33,8 +33,12 @@ if x == "g":
         name.append("")
         subtittle.append("")
         src.append("")
+    tmp = input("number of tiles (max 12) : ")
+    max = int(tmp)
+    if max > 12:
+        max = 12
     num = 1
-    while num < 13:
+    while num <= max:
         print("tile : " + str(num))
         link[num] = input("link : ")
         name[num] = input("name : ")
