@@ -26,12 +26,12 @@ if x == "g":
     f.write("            <tr>\n")
     link = []
     name = []
-    subtittle = []
+    subtitle = []
     src = []
     for i in range(13):
         link.append("")
         name.append("")
-        subtittle.append("")
+        subtitle.append("")
         src.append("")
     tmp = input("number of tiles (max 12) : ")
     max = int(tmp)
@@ -42,7 +42,7 @@ if x == "g":
         print("tile : " + str(num))
         link[num] = input("link : ")
         name[num] = input("name : ")
-        subtittle[num] = input("subtittle : ")
+        subtitle[num] = input("subtitle : ")
         src[num] = input("src : ")
         print("---------------------")
         num += 1
@@ -55,7 +55,7 @@ if x == "g":
         f.write("                            <img src=\"src/" + src[num] + ".png\"" + " style=\'max-width: 50px\'>\n")
         f.write("                        </div>\n")
         f.write("                        <h3>" + name[num] + "</h3>\n")
-        f.write("                        <p>" + subtittle[num] + "</p>\n")
+        f.write("                        <p>" + subtitle[num] + "</p>\n")
         f.write("                    </a>\n")
         f.write("                </td>\n")
         if num % 4 == 0:
@@ -63,7 +63,6 @@ if x == "g":
             f.write("            </tr>\n")
         num += 1
     # Adds footer
-    f.write("            </tr>\n")
     f.write("        </table>\n")
     f.write("    </div>\n")
     f.write("<footer>\n")
@@ -84,7 +83,7 @@ else:
     num = input("num : ")
     link = input("link : ")
     name = input("name : ")
-    subtittle = input("subtittle : ")
+    subtitle = input("subtitle : ")
     src = input("src : ")
     print("----------------------------------------------\n")
     print("<a href= \"" + link + "\" id="+ num + " class=\"lBox\">")
@@ -92,6 +91,6 @@ else:
     print("        <img src=\"src/" + src + ".png\"" + " style=\'max-width: 50px\'>")
     print("    </div>")
     print("    <h3>" + name + "</h3>")
-    print("    <p>" + subtittle + "</p>")
+    print("    <p>" + subtitle + "</p>")
     print("</a>")
     print("\n----------------------------------------------\n")
