@@ -78,10 +78,10 @@ This project is an attempt at a better desktop and mobile launch page.  It has k
 * ### Daymode
     Homepage has a night mode button for shifting between different text and background colors. To switch colors just click the moon icon in the bottum right (**mn.png** in src) Daymode colors are stored in keys.js lines 27-29
     ```javascript
-document.documentElement.style.setProperty('--background', '#CACFD2');
-document.documentElement.style.setProperty('--background-alt', '#CACFD2');
-document.documentElement.style.setProperty('--base-txt', '#3A529B');
-  ```
+    document.documentElement.style.setProperty('--background', '#CACFD2');
+    document.documentElement.style.setProperty('--background-alt', '#CACFD2');
+    document.documentElement.style.setProperty('--base-txt', '#3A529B');
+    ```
   Here is index.html in daymode
   ![nightmode](screenshots/nightmode.png)
 
