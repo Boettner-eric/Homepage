@@ -88,15 +88,15 @@ This project is an attempt at a better desktop and mobile launch page.  It has k
 * ### Keyboard Shortcuts
  Homepage supports custom keyboard shortcuts for websites.  Currently index.html only contains one shortcut (b -> back to github) but keys.js contains instructions and structure for adding custom shortcuts and filters based on folder (for any new pages created in the template b -> back to index.html). See lines 115-124 to add custom shortcuts.
  ```javascript
- var fileName = location.href.split("/").slice(-1)
- if (fileName == "index.html"){
+ var fileName = location.href.split("/").slice(-1) // current url
+ if (fileName == "index.html"){ // separate shortcut for each folder
          if (key == 66) { // b shortcut - back
              window.location.replace("https://github.com/Boettner-eric/Homepage"); // add to this if statement for shortcuts on index.html
          }
      } else {
              if (key == 66) {  // b shortcut - back
                 window.location.replace("index.html");
-            } // ddd to this if statement for shortcuts on new folder pages
+            } // add to this if statement for shortcuts on new folder pages
         }
  ```
  *Javascript codes for each key can be found on [this](keycode.info) awesome site
