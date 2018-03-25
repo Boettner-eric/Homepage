@@ -1,7 +1,7 @@
 # Homepage
 
 ## [Hosted on Gitub.io](https://boettner-eric.github.io/Homepage/)
-![Template.html (github public version)](template.png)
+![Template.html (github public version)](screenshots/template.png)
 
 This project is an attempt at a better desktop and mobile launch page.  It has keyboard shortcuts, nested folders, cool design and is super easy to edit
 
