@@ -3,7 +3,7 @@
 ## [Hosted on Gitub.io](https://boettner-eric.github.io/Homepage/)
 ![Template.html (github public version)](screenshots/template.png)
 
-This project is an attempt at a better desktop and mobile launch page.  It has keyboard shortcuts, nested folders, cool design and is super easy to edit
+This project is an attempt at a better desktop and mobile launch page.  It has keyboard shortcuts, nested folders, cool design and is super easy to edit.
 
 # Features:
 * ### Scripted page creation
@@ -63,7 +63,7 @@ This project is an attempt at a better desktop and mobile launch page.  It has k
       <img src="src/ba.png" style='max-width: 50px'>
   </div>
   ```
-  - To add a folder just add a tile for the new foldr and use script.py to generate a new file. Put the previous folder's filename in the url of the back button and you should have a functioning folder. An example folder :
+  - To add a folder just add a tile for the new folder and use script.py to generate a new file. Put the previous folder's filename in the url of the back button and you should have a functioning folder. An example folder :
 ![My setup w/ folders and icons](screenshots/folder.png)
 
 * ### Custom Icons
