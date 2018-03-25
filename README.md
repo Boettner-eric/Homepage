@@ -15,22 +15,22 @@ This project is an attempt at a better desktop and mobile launch page.  It has k
     number of tiles (max 12) : 3
     ---------------------
     tile : 1
-    link : https://Github.com
-    name : Github
+    url : https://Github.com
+    title : Github
     subtitle : open source
-    src : gh
+    icon : gh
     ---------------------
     tile : 2
-    link : https://stackoverflow.com
-    name : Stack Overflow
+    url : https://stackoverflow.com
+    title : Stack Overflow
     subtitle : Dev help
-    src : st
+    icon : st
     ---------------------
     tile : 3
-    link : https://Google
-    name : Google
+    url : https://Google
+    title : Google
     subtitle : search
-    src : go
+    icon : go
     ---------------------
     File Created
 ```
@@ -66,19 +66,49 @@ This project is an attempt at a better desktop and mobile launch page.  It has k
   - To add a folder just add a tile for the new foldr and use script.py to generate a new file. Put the previous folder's filename in the url of the back button and you should have a functioning folder. An example folder :
 ![My setup w/ folders and icons](screenshots/folder.png)
 
-* ### Nightmode
-  (small moon icon in bottom left)
-    to edit nightmode/base colors open keys.js and edit lines 27-29
+* ### Custom Icons
+ - Icons are stored in the SRC folder and you can add your own icon to any tile.
+ ```html
+ <div class="button">
+    <img src="src/ba.png" style='max-width: 50px'>
+ </div>
+ ```
+ here **ba.png** is the name of the icon and it is located in the **src** folder hence **src/ba.png**.  When using script.py just add the name of your icon file without the file type (i.e. .png) and it'll handle the rest.
+
+* ### Daymode
+    Homepage has a night mode button for shifting between different text and background colors. To switch colors just click the moon icon in the bottum right (**mn.png** in src) Daymode colors are stored in keys.js lines 27-29
     ```javascript
-    document.documentElement.style.setProperty('--background', '#CACFD2');
-    document.documentElement.style.setProperty('--background-alt', '#CACFD2');
-    document.documentElement.style.setProperty('--base-txt', '#3A529B');
+document.documentElement.style.setProperty('--background', '#CACFD2');
+document.documentElement.style.setProperty('--background-alt', '#CACFD2');
+document.documentElement.style.setProperty('--base-txt', '#3A529B');
   ```
+  Here is index.html in daymode
   ![nightmode](screenshots/nightmode.png)
+
+* ### Keyboard Shortcuts
+ Homepage supports custom keyboard shortcuts for websites.  Currently index.html only contains one shortcut (b -> back to github) but keys.js contains instructions and structure for adding custom shortcuts and filters based on folder (for any new pages created in the template b -> back to index.html). See lines 115-124 to add custom shortcuts.
+ ```javascript
+ var fileName = location.href.split("/").slice(-1)
+ if (fileName == "index.html"){
+         if (key == 66) { // b shortcut - back
+             window.location.replace("https://github.com/Boettner-eric/Homepage"); // add to this if statement for shortcuts on index.html
+         }
+     } else {
+             if (key == 66) {  // b shortcut - back
+                window.location.replace("index.html");
+            } // ddd to this if statement for shortcuts on new folder pages
+        }
+ ```
+ *Javascript codes for each key can be found on [this](keycode.info) awesome site
+
 * ### Responsive design
+ Homepage was created with mobile support first and is fully responsive.  It features one breakpoint at 650 pixels for the smallest displays but resizes well at any resolution<sup>1</sup>
 ![Responsive layout](screenshots/responsive.png)
+<sup>1</sup> Feel free to submit an issue for any weird looking or broken resolutions, Currently images are slightly off center for mobile resolutions and vertical spacing isn't optimized for ipx
 
 
 * This is a fork of - https://github.com/Capuno/Decaux - My version is very different but started from this code base
 
 * All icons are from the - https://icons8.com color theme
+
+* I hope you enjoy using this homepage ! If you have any questions you can submit an issue through github

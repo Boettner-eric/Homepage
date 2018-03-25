@@ -114,11 +114,11 @@ document.onkeydown = function(e) {
 	*/
 	var fileName = location.href.split("/").slice(-1)
 	if (fileName == "template.html"){
-			if (key == 78) { // n key shortcut - example
-				window.location.replace("network.html"); // sub in any link to a local html file or remote website
+			if (key == 66) { // b key shortcut - back
+				window.location.replace("https://github.com/Boettner-eric/Homepage"); // sub in any link to a local html file or remote website
 	} else {
 		if (key == 66) {  // b shortcut - back
-			window.location.replace("template.html");
+			window.location.replace("index.html");
 	}
 	}
 	}

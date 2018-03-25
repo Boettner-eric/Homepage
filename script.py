@@ -40,10 +40,10 @@ if x == "g":
     num = 1
     while num <= max:
         print("tile : " + str(num))
-        link[num] = input("link : ")
-        name[num] = input("name : ")
+        link[num] = input("url : ")
+        name[num] = input("title : ")
         subtitle[num] = input("subtitle : ")
-        src[num] = input("src : ")
+        src[num] = input("icon : ")
         print("---------------------")
         num += 1
     num = 1
