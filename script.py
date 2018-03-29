@@ -59,8 +59,11 @@ if x == "g":
         f.write("                    </a>\n")
         f.write("                </td>\n")
         if num % 4 == 0:
-            f.write("            <tr>\n")
-            f.write("            </tr>\n")
+            if num == 12:
+                f.write("            </tr>\n")
+            else:
+                f.write("            <tr>\n")
+                f.write("            </tr>\n")
         num += 1
     # Adds footer
     f.write("        </table>\n")
