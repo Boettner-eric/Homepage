@@ -41,9 +41,9 @@ if x == "g":
     while num <= max:
         print("tile : " + str(num))
         link[num] = input("url : ")
+        src[num] = input("icon : ")
         name[num] = input("title : ")
         subtitle[num] = input("subtitle : ")
-        src[num] = input("icon : ")
         print("---------------------")
         num += 1
     num = 1
