@@ -9,6 +9,7 @@
 }
 
 .button img {
+	/* width: 20%; !! also remove style max width */
   display: flex;
 	margin-right: 60%;
 }
@@ -20,8 +21,8 @@ h3 {
 
 p {
 	margin-left: 45%;
+	font-size: 10px;
 }
-
 
 @media only screen and (max-width: 603px) { /* For narrow devices */
   .button img {
@@ -40,12 +41,12 @@ p {
 		padding-top: 10px;
 		}
 	h3 {
-		margin-top: 55%;
-		font-size: 11px;
+		margin-top: 50px;
+		font-size: 12px;
 		margin-left: 0;
 		text-align: center;
 	}
-	form {
+	footer {
 		display: none;
 	}
 	-webkit-filter {
@@ -122,7 +123,7 @@ div#grid table {
 div#grid table tr td {
 	height: 170px;
 	width: 450px;
-	padding-top: 20px;
+	padding-top: 30px;
 }
 div#grid table tr td a {
 	text-shadow: 0px 0px 0 rgba(200,50,50,.5), 0px 0px 0 rgba(50,200,150,.5);
@@ -171,10 +172,12 @@ div#grid table tr td a:focus, div#grid table tr td a:hover {
 	outline: 0;
 }
 .night {
-	margin-left: 3%;
+    right: 5%;
 	background-color: var(--background);
+    display: flex;
+    position: fixed;
 	border: none;
-	margin-bottom: 10px;
+    bottom: 1%;
 }
 footer form input[type="text"] {
 	transition: .3s border-color, .3s background-color, .3s border-bottom;
@@ -183,20 +186,20 @@ footer form input[type="text"] {
 	border: 0; /*   rip ramp   */
 	border-bottom: 1px solid;
 	color: var(--base-txt);
-	font-size: 30px;
+	font-size: 20px;
 	position: fixed;
-	display: block;
+	display: flex;
 	outline: none;
-	padding: 10px;
+	padding: 5px;
 	z-index: 4;
-	bottom: 5%;
+	bottom: 1%;
 	width: 75%;
 	left: 10%;
 }
 footer form input[type="text"]:focus {
 	background-color: var(--background);
-	border-bottom: 10px solid #60B48A;
-	color: #5A555B;
+	border-bottom: 5px solid #FF3A0F;
+	color: var(--base-txt);
 	outline: none;
 }
 footer form input[type="text"]:focus::-webkit-input-placeholder {

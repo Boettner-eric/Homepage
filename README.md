@@ -4,6 +4,10 @@
 ![Template.html (github public version)](screenshots/template.png)
 
 This project is an attempt at a better desktop and mobile launch page.  It has keyboard shortcuts, nested folders, cool design and is super easy to edit.
+![Template.html (github public version)](screenshots/template.png)
+
+#[Template.html (github public version)](#Features)
+
 
 # Features:
 * ### Scripted page creation
