@@ -23,7 +23,19 @@ p {
 	margin-left: 45%;
 	font-size: 10px;
 }
-
+/* Portrait iphone x  */
+/* from  https://css-tricks.com/snippets/css/media-queries-for-standard-devices/ */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+    div#grid table tr td {
+    	height: 370px;
+    	width: 450px;
+    	padding-top: 30px;
+    }
+}
 @media only screen and (max-width: 603px) { /* For narrow devices */
   .button img {
     width: 70%;
