@@ -30,7 +30,7 @@ p {
   and (max-device-width: 812px)
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: portrait) {
-    div#grid table tr td {
+    table tr td {
     	height: 370px;
     	width: 450px;
     	padding-top: 30px;
