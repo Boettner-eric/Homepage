@@ -4,9 +4,6 @@
 ![Template.html (github public version)](screenshots/template.png)
 
 This project is an attempt at a better desktop and mobile launch page.  It has keyboard shortcuts, nested folders, cool design and is super easy to edit.
-![Template.html (github public version)](screenshots/template.png)
-
-#[Template.html (github public version)](#Features)
 
 
 # Features:
@@ -79,18 +76,27 @@ This project is an attempt at a better desktop and mobile launch page.  It has k
  ```
  here **ba.png** is the name of the icon and it is located in the **src** folder hence **src/ba.png**.  When using script.py just add the name of your icon file without the file type (i.e. .png) and it'll handle the rest.
 
-* ### Daymode
-    Homepage has a night mode button for shifting between different text and background colors. To switch colors just click the moon icon in the bottum right (**mn.png** in src) Daymode colors are stored in keys.js lines 27-29
+* ### Themes
+    Homepage has a theme  button for shifting between different text and background colors. To switch colors just click the moon icon in the bottom right (**mn.png** in src) Theme colors are stored in keys.js lines 27-66.  For example here is the Vim theme
     ```javascript
-    document.documentElement.style.setProperty('--background', '#CACFD2');
-    document.documentElement.style.setProperty('--background-alt', '#CACFD2');
-    document.documentElement.style.setProperty('--base-txt', '#3A529B');
+    document.documentElement.style.setProperty('--background', '#282828');
+    document.documentElement.style.setProperty('--background-alt', '#282828');
+    document.documentElement.style.setProperty('--base-txt', '#33FF33');
+    document.documentElement.style.setProperty('--main-cl', '#282828');
+    document.documentElement.style.setProperty('--comp-cl', '#33FF33');
+    document.documentElement.style.setProperty('--sub-txt', '#33FF33');
     ```
-  Here is index.html in daymode
-  ![nightmode](screenshots/nightmode.png)
+  Here is index.html in Vim theme
+  ![Vim Theme !](screenshots/vim_theme.png)
+  Or here is index.html in Neon Theme
+  ![Neon Theme](screenshots/neon_theme.png)
+  Or finally Discord theme
+  ![Discord Theme](screenshots/discord_theme.png)
+
 
 * ### Keyboard Shortcuts
- Homepage supports custom keyboard shortcuts for websites.  Currently index.html only contains one shortcut (b -> back to github) but keys.js contains instructions and structure for adding custom shortcuts and filters based on folder (for any new pages created in the template b -> back to index.html). See lines 115-124 to add custom shortcuts.
+ - Homepage supports custom keyboard shortcuts for websites.  Currently index.html only contains one shortcut (b -> back to github) but keys.js contains instructions and structure for adding custom shortcuts and filters based on folder (for any new pages created in the template b -> back to index.html). See lines 115-124 to add custom shortcuts.
+ - Themes are currently mapped to 1-7 for quick switches between themes
  ```javascript
  var fileName = location.href.split("/").slice(-1) // current url
  if (fileName == "index.html"){ // separate shortcut for each folder
@@ -104,6 +110,7 @@ This project is an attempt at a better desktop and mobile launch page.  It has k
         }
  ```
  *Javascript codes for each key can be found on [this](keycode.info) awesome site
+ *Key shortcuts don't work on the github hosted site unless javascript is enabled in browser
 
 * ### Responsive design
  Homepage was created with mobile support first and is fully responsive.  It features one breakpoint at 650 pixels for the smallest displays but resizes well at any resolution<sup>1</sup>
