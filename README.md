@@ -92,7 +92,8 @@ This project is an attempt at a better desktop and mobile launch page.  It has k
   ![Neon Theme](screenshots/neon_theme.png)
   Or finally Discord theme
   ![Discord Theme](screenshots/discord_theme.png)
-
+  * Themes are saved as cookies and read on every reload allowing the theme to persist through folders and new instances
+  * To create a theme follow the template or use script.py
 
 * ### Keyboard Shortcuts
  - Homepage supports custom keyboard shortcuts for websites.  Currently index.html only contains one shortcut (b -> back to github) but keys.js contains instructions and structure for adding custom shortcuts and filters based on folder (for any new pages created in the template b -> back to index.html). See lines 115-124 to add custom shortcuts.

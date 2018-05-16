@@ -1,13 +1,22 @@
 var focused = 1;
+window.onload = function(){
+  document.getElementById(focused).focus(); // Focus at start and when window is focused again.
+  var decodedCookie = decodeURIComponent(document.cookie); // Loads cookie w/ window
+  var tmp = decodedCookie.split('='); // Spits into tmp = {theme,"theme"}
+  // for finding the current theme name : alert(tmp[1]);
+  window[tmp[1]](); // calls the function for the "theme"
+};
 
-window.onload = function(){document.getElementById(focused).focus();}; // Focus at start and when window is focused again.
+function setCookie(theme) {
+  document.cookie = "theme=" + theme; // saves the cookie
+}
 
 window.onclick = function(e){
 	if ( document.activeElement.id != "search" ) {
 		document.getElementById(focused).focus();
 	}
 };
-// **** Theme section
+// **** Theme Definitions
 function dark(){ //1
   document.documentElement.style.setProperty('--background', '#000000');
   document.documentElement.style.setProperty('--background-alt', '#000000');
@@ -15,6 +24,7 @@ function dark(){ //1
   document.documentElement.style.setProperty('--main-cl', '#D32F2F');
   document.documentElement.style.setProperty('--comp-cl', '#DD4132');
   document.documentElement.style.setProperty('--sub-txt', '#99AAB5');
+  setCookie("dark");
 }
 function discord(){ // 2
   document.documentElement.style.setProperty('--background', '#23272A');
@@ -23,6 +33,7 @@ function discord(){ // 2
   document.documentElement.style.setProperty('--main-cl', '#7289DA');
   document.documentElement.style.setProperty('--comp-cl', '#99AAB5');
   document.documentElement.style.setProperty('--sub-txt', '#7289DA');
+  setCookie("discord");
 }
 function light(){ // 3
   document.documentElement.style.setProperty('--background', '#D4E6F1');
@@ -31,6 +42,7 @@ function light(){ // 3
   document.documentElement.style.setProperty('--main-cl', '#F64C72');
   document.documentElement.style.setProperty('--comp-cl', '#2F2FA2');
   document.documentElement.style.setProperty('--sub-txt', '#2F2FA2');
+  setCookie("light");
 }
 function gogh() { // 4
   document.documentElement.style.setProperty('--background', '#0375B4');
@@ -39,6 +51,7 @@ function gogh() { // 4
   document.documentElement.style.setProperty('--main-cl', '#FECE00');
   document.documentElement.style.setProperty('--comp-cl', '#007849');
   document.documentElement.style.setProperty('--sub-txt', '#FFFFFF');
+  setCookie("gogh");
 }
 function neon() { //5
   document.documentElement.style.setProperty('--background', '#0E0B16');
@@ -47,6 +60,7 @@ function neon() { //5
   document.documentElement.style.setProperty('--main-cl', '#4717F6');
   document.documentElement.style.setProperty('--comp-cl', '#A239CA');
   document.documentElement.style.setProperty('--sub-txt', '#E7DFDD');
+  setCookie("neon");
 }
 function soft() { //6
   document.documentElement.style.setProperty('--background', '#6B5B95');
@@ -55,6 +69,7 @@ function soft() { //6
   document.documentElement.style.setProperty('--main-cl', '#FF383F');
   document.documentElement.style.setProperty('--comp-cl', '#223A5E');
   document.documentElement.style.setProperty('--sub-txt', '#F0EDE5');
+  setCookie("soft");
 }
 function vim(){ //7
   document.documentElement.style.setProperty('--background', '#282828');
@@ -63,6 +78,7 @@ function vim(){ //7
   document.documentElement.style.setProperty('--main-cl', '#282828');
   document.documentElement.style.setProperty('--comp-cl', '#33FF33');
   document.documentElement.style.setProperty('--sub-txt', '#33FF33');
+  setCookie("vim");
 }
 // **** END theme section
 
@@ -78,33 +94,34 @@ document.getElementById("search").onfocus = function(){ // Focusing search bar
 	document.getElementById("blackout").style.opacity = .3;
 	document.getElementById("blackout").style.pointerEvents = "all";
 };
-document.getElementById("night").onclick = function(){ // Themes !!!
+document.getElementById("night").onclick = function(){ // Switches themes with button press
   switch (getComputedStyle(document.body).getPropertyValue("--background")) {
     case '#23272A':// discord -> dark
       dark();
       break;
-    case '#000000': // dark -> soft
+    case '#000000': // dark -> light
+      light();
+      break;
+    case '#D4E6F1': // light -> soft
       soft();
       break;
     case '#6B5B95': // soft -> neon
       neon();
       break;
-    case '0E0B16': // neon -> gogh
+    case '#0E0B16': // neon -> gogh
       gogh();
       break;
     case '#0375B4': // gogh -> vim
       vim();
       break;
-    case '#282828': // vim -> light
-      light();
-      break;
-    case '#D4E6F1': // light -> discord
+    case '#282828': // vim -> dark
       discord();
       break;
-    default:
+    default: // ? -> light
       light();
       break;
   }
+  //alert(getComputedStyle(document.body).getPropertyValue("--background")) Debug to check background color
 };
 
 document.onkeydown = function(e) {
