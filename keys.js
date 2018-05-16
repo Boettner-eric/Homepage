@@ -80,6 +80,15 @@ function vim(){ //7
   document.documentElement.style.setProperty('--sub-txt', '#33FF33');
   setCookie("vim");
 }
+function example(){
+  document.documentElement.style.setProperty('--background', '#FFFFFF');
+  document.documentElement.style.setProperty('--background-alt', '#FFFFFF');
+  document.documentElement.style.setProperty('--base-txt', '#000000');
+  document.documentElement.style.setProperty('--main-cl', '#000000');
+  document.documentElement.style.setProperty('--comp-cl', '#000000');
+  document.documentElement.style.setProperty('--sub-txt', '#000000');
+  setCookie("example");
+}
 // **** END theme section
 
 document.getElementById("search").onblur = function(){ // Unfocusing search bar
@@ -114,7 +123,10 @@ document.getElementById("night").onclick = function(){ // Switches themes with b
     case '#0375B4': // gogh -> vim
       vim();
       break;
-    case '#282828': // vim -> dark
+    case '#282828': // vim -> example
+      example();
+      break;
+    case '#FFFFFF': // example -> discord
       discord();
       break;
     default: // ? -> light

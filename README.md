@@ -11,6 +11,7 @@ This project is an attempt at a better desktop and mobile launch page.  It has k
  The script.py file generates html files with minimal user input
 ```
     git $ python3 script.py
+    type : t p (theme/webpage) - p
     mode : s g (single/generate) -  g
     enter filename : sample
     number of tiles (max 12) : 3
@@ -36,7 +37,32 @@ This project is an attempt at a better desktop and mobile launch page.  It has k
     File Created
 ```
  ![sample.html](screenshots/example.png)
+ * Script.py also supports formatting new themes. Simply type the hex values for each color and it'll write the javascript for you
 
+```
+  git $ python3 script.py
+  type : t p (theme/webpage) - t
+  Theme Name               - example
+  Background Color (hex)   - #FFFFFF
+  Alt Background Color     - #FFFFFF
+  Accent Color             - #000000
+  Compliment Color         - #000000
+  Main Text Color          - #000000
+  Subtext Color            - #000000
+  ---------------------------------------------------------------------------
+  function example() {
+    document.documentElement.style.setProperty('--background', '#FFFFFF');
+    document.documentElement.style.setProperty('--background-alt', '#FFFFFF');
+    document.documentElement.style.setProperty('--base-txt', '#000000');
+    document.documentElement.style.setProperty('--main-cl', '#000000');
+    document.documentElement.style.setProperty('--comp-cl', '#000000');
+    document.documentElement.style.setProperty('--sub-txt', '#000000');)
+    setCookie("example")
+  }
+  ----------------------------------------------------------------------------
+  copy and paste into the keys.js file in the section for
+  themes then add a keyboard shortcut/case for the new theme
+```
 * ### Fully customizable tiles and nested folders
    To edit a tile open template.html.  The main block of code should look like this:
    ![back tile](screenshots/back.png)
@@ -94,6 +120,7 @@ This project is an attempt at a better desktop and mobile launch page.  It has k
   ![Discord Theme](screenshots/discord_theme.png)
   * Themes are saved as cookies and read on every reload allowing the theme to persist through folders and new instances
   * To create a theme follow the template or use script.py
+  * Cookies might not work on hosted version but do work well locally
 
 * ### Keyboard Shortcuts
  - Homepage supports custom keyboard shortcuts for websites.  Currently index.html only contains one shortcut (b -> back to github) but keys.js contains instructions and structure for adding custom shortcuts and filters based on folder (for any new pages created in the template b -> back to index.html). See lines 115-124 to add custom shortcuts.
