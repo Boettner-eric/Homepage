@@ -63,6 +63,7 @@ This project is an attempt at a better desktop and mobile launch page.  It has k
   copy and paste into the keys.js file in the section for
   themes then add a keyboard shortcut/case for the new theme
 ```
+![example theme](screenshots/example_theme.png)
 * ### Fully customizable tiles and nested folders
    To edit a tile open template.html.  The main block of code should look like this:
    ![back tile](screenshots/back.png)
