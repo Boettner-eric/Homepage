@@ -1,10 +1,10 @@
 var focused = 1;
 window.onload = function(){
-  document.getElementById(focused).focus(); // Focus at start and when window is focused again.
+  document.getElementById(focused).focus(); // Focus at start and when window is focused
   var decodedCookie = decodeURIComponent(document.cookie); // Loads cookie w/ window
   var tmp = decodedCookie.split('='); // Spits into tmp = {theme,"theme"}
   // for finding the current theme name : alert(tmp[1]);
-  window[tmp[1]](); // calls the function for the "theme"
+  window[tmp[1]](); // calls the function for a theme by its name
 };
 
 function setCookie(theme) {
@@ -16,7 +16,11 @@ window.onclick = function(e){
 		document.getElementById(focused).focus();
 	}
 };
-// **** Theme Definitions
+/* **** Theme Definitions
+  - Themes are defined as functions
+  - to change themes simply call the function corresponding to a theme
+  - to add a theme add a function then add a keyboard shortcut and/or a case for the theme button
+*/
 function dark(){ //1
   document.documentElement.style.setProperty('--background', '#000000');
   document.documentElement.style.setProperty('--background-alt', '#000000');
