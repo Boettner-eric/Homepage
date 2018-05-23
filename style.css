@@ -28,8 +28,8 @@ p {
   .button img {
     width: 70%;
 		margin-top: 0px;
-		right: 20%;
-		left: 30%;
+    right: 25%;
+		left: 25%;
   }
 	p {
 		font-size: 0;
