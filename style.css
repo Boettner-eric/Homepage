@@ -28,18 +28,18 @@ p {
   .button img {
     width: 70%;
 		margin-top: 0px;
-    right: 25%;
+		right: 25%;
 		left: 25%;
   }
 	p {
 		font-size: 0;
 	}
-	.grid {
+	.grid tr td a {
 		width: 30%;
 		height: 200%;
 		left: -15px;
-		padding-top: 10px;
-		}
+		padding-top: 60px;
+	}
 	h3 {
 		margin-top: 50px;
 		font-size: 12px;
@@ -102,15 +102,18 @@ div#grid {
 div#grid table {
 	font-family: 'menlo', sans-serif;
 	border-collapse: separate;
-	border-spacing: 10px;
+	border-spacing: 5px;
 	font-size: 10px;
 }
 
 div#grid table tr td {
-	height: 170px;
-	width: 450px;
-	padding-top: 20px;
+	height: 120px;
+	width: 500px;
+	padding-top: 50px;
+  padding-left: 1%;
+  padding-right: 1%;
 }
+
 div#grid table tr td a {
 	box-shadow: 0px 0px 0 var(--main-cl), 0px 0px 0 var(--comp-cl);
 	transition: .2s text-shadow, .2s box-shadow, .2s border-bottom;
@@ -159,34 +162,37 @@ div#grid table tr td a:focus, div#grid table tr td a:hover {
   display: flex;
   position: fixed;
 	border: none;
-  bottom: 1%;
+  bottom: 2%;
 }
 footer form input[type="text"] {
-	transition: .3s border-color, .3s background-color, .3s border-bottom;
-	background-color: var(--background);
-	border-color: var(--base-txt);
+	background-color: var(--background-alt);
+  color: var(--comp-cl);
+	border-color: var(--comp-cl);
 	border: 0; /*   rip ramp   */
-	border-bottom: 1px solid;
-	color: var(--comp-cl);
+	border-bottom: 2px solid;
 	font-size: 20px;
 	position: fixed;
 	display: flex;
 	outline: none;
 	padding: 5px;
 	z-index: 4;
-	bottom: 1%;
+	bottom: 2%;
 	width: 75%;
 	left: 10%;
 }
+
 footer form input[type="text"]:focus {
-	background-color: var(--background);
-	border-bottom: 5px solid var(--main-cl);
-	color: var(--main-cl);
+	border-bottom: 4px solid var(--comp-cl);
+	color: var(--sub-txt);
 	outline: none;
+
 }
 footer form input[type="text"]:focus::-webkit-input-placeholder {
 	opacity: 0;
 }
 footer form input[type="text"]:focus::-moz-placeholder {
 	opacity: 0;
+}
+input::-webkit-input-placeholder{
+    color:var(--sub-txt);
 }
