@@ -127,6 +127,7 @@ Here's the Discord theme from the example above -
   * To create a theme follow the template or use script.py
   * Cookies might not work based on your browser settings (make sure to enable cookies)
   * Themes can also be selected from the menu
+  
   ![Theme Menu](screenshots/list_theme.png)
   ![Alt Theme Menu](screenshots/list2_theme.png)
 * ### Keyboard Shortcuts
