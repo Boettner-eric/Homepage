@@ -1,7 +1,7 @@
 # Homepage
 
 ## [Hosted on Gitub.io](https://boettner-eric.github.io/Homepage/)
-![Template.html (github public version)](screenshots/template.png)
+![Template.html (github public version)](screenshots/gogh_theme.png)
 
 This project is an attempt at a better desktop and mobile launch page.  It has keyboard shortcuts, themes, nested folders, cool design and is super easy to edit.
 
@@ -120,8 +120,8 @@ Here's the Discord theme from the example above -
   ![Vim Theme !](screenshots/vim_theme.png)
   Or here is index.html in Neon Theme
   ![Neon Theme](screenshots/neon_theme.png)
-  Or finally Discord theme
-  ![Discord Theme](screenshots/discord_theme.png)
+  Or finally Purple theme
+  ![Purple Theme](screenshots/purple_theme.png)
   (The Screenshot folder has even more example themes)
   * Themes are saved as cookies and read on every reload allowing the theme to persist through folders and new instances
   * To create a theme follow the template or use script.py
