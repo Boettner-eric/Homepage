@@ -1,10 +1,11 @@
-var focused = 1;
+var focused = 1; // It's global so I can save it and then use it when I quit the search bar.
+
 window.onload = function(){
-  document.getElementById(focused).focus(); // Focus at start and when window is focused
+  document.getElementById(focused).focus(); // Focus at start and when window is focused again.
   var decodedCookie = decodeURIComponent(document.cookie); // Loads cookie w/ window
   var tmp = decodedCookie.split('='); // Spits into tmp = {theme,"theme"}
   // for finding the current theme name : alert(tmp[1]);
-  window[tmp[1]](); // calls the function for a theme by its name
+  window[tmp[1]](); // calls the function for the "theme"
 };
 
 function setCookie(theme) {
@@ -16,19 +17,15 @@ window.onclick = function(e){
 		document.getElementById(focused).focus();
 	}
 };
-/* **** Theme Definitions
-  - Themes are defined as functions
-  - to change themes simply call the function corresponding to a theme
-  - to add a theme add a function then add a keyboard shortcut and/or a case for the theme button
-*/
-function dark(){ //1
+// **** Theme Definitions
+function lava(){ //1
   document.documentElement.style.setProperty('--background', '#000000');
   document.documentElement.style.setProperty('--background-alt', '#000000');
   document.documentElement.style.setProperty('--base-txt', '#99AAB5');
   document.documentElement.style.setProperty('--main-cl', '#D32F2F');
   document.documentElement.style.setProperty('--comp-cl', '#DD4132');
   document.documentElement.style.setProperty('--sub-txt', '#99AAB5');
-  setCookie("dark");
+  setCookie("lava");
 }
 function discord(){ // 2
   document.documentElement.style.setProperty('--background', '#23272A');
@@ -39,21 +36,21 @@ function discord(){ // 2
   document.documentElement.style.setProperty('--sub-txt', '#7289DA');
   setCookie("discord");
 }
-function light(){ // 3
+function rwb(){ // 3 red white blue
   document.documentElement.style.setProperty('--background', '#D4E6F1');
   document.documentElement.style.setProperty('--background-alt', '#D4E6F1');
   document.documentElement.style.setProperty('--base-txt', '#F64C72');
   document.documentElement.style.setProperty('--main-cl', '#F64C72');
   document.documentElement.style.setProperty('--comp-cl', '#2F2FA2');
   document.documentElement.style.setProperty('--sub-txt', '#2F2FA2');
-  setCookie("light");
+  setCookie("rwb");
 }
 function gogh() { // 4
   document.documentElement.style.setProperty('--background', '#0375B4');
   document.documentElement.style.setProperty('--background-alt','#0375B4');
   document.documentElement.style.setProperty('--base-txt', '#FFFFF');
-  document.documentElement.style.setProperty('--main-cl', '#FECE00');
-  document.documentElement.style.setProperty('--comp-cl', '#007849');
+  document.documentElement.style.setProperty('--main-cl', '#007849');
+  document.documentElement.style.setProperty('--comp-cl', '#FECE00');
   document.documentElement.style.setProperty('--sub-txt', '#FFFFFF');
   setCookie("gogh");
 }
@@ -66,14 +63,14 @@ function neon() { //5
   document.documentElement.style.setProperty('--sub-txt', '#E7DFDD');
   setCookie("neon");
 }
-function soft() { //6
+function purple() { //6
   document.documentElement.style.setProperty('--background', '#6B5B95');
   document.documentElement.style.setProperty('--background-alt','#6B5B95');
   document.documentElement.style.setProperty('--base-txt', '#F0EDE5');
   document.documentElement.style.setProperty('--main-cl', '#FF383F');
   document.documentElement.style.setProperty('--comp-cl', '#223A5E');
   document.documentElement.style.setProperty('--sub-txt', '#F0EDE5');
-  setCookie("soft");
+  setCookie("purple");
 }
 function vim(){ //7
   document.documentElement.style.setProperty('--background', '#282828');
@@ -83,15 +80,6 @@ function vim(){ //7
   document.documentElement.style.setProperty('--comp-cl', '#33FF33');
   document.documentElement.style.setProperty('--sub-txt', '#33FF33');
   setCookie("vim");
-}
-function example(){
-  document.documentElement.style.setProperty('--background', '#FFFFFF');
-  document.documentElement.style.setProperty('--background-alt', '#FFFFFF');
-  document.documentElement.style.setProperty('--base-txt', '#000000');
-  document.documentElement.style.setProperty('--main-cl', '#000000');
-  document.documentElement.style.setProperty('--comp-cl', '#000000');
-  document.documentElement.style.setProperty('--sub-txt', '#000000');
-  setCookie("example");
 }
 // **** END theme section
 
@@ -107,37 +95,26 @@ document.getElementById("search").onfocus = function(){ // Focusing search bar
 	document.getElementById("blackout").style.opacity = .3;
 	document.getElementById("blackout").style.pointerEvents = "all";
 };
-document.getElementById("night").onclick = function(){ // Switches themes with button press
-  switch (getComputedStyle(document.body).getPropertyValue("--background")) {
-    case '#23272A':// discord -> dark
-      dark();
-      break;
-    case '#000000': // dark -> light
-      light();
-      break;
-    case '#D4E6F1': // light -> soft
-      soft();
-      break;
-    case '#6B5B95': // soft -> neon
-      neon();
-      break;
-    case '#0E0B16': // neon -> gogh
-      gogh();
-      break;
-    case '#0375B4': // gogh -> vim
-      vim();
-      break;
-    case '#282828': // vim -> example
-      example();
-      break;
-    case '#FFFFFF': // example -> discord
-      discord();
-      break;
-    default: // ? -> light
-      light();
-      break;
-  }
-  //alert(getComputedStyle(document.body).getPropertyValue("--background")) Debug to check background color
+document.getElementById("gogh").onclick = function(){ // Switches themes with button press
+  gogh();
+};
+document.getElementById("discord").onclick = function(){ // Switches themes with button press
+  discord();
+};
+document.getElementById("vim").onclick = function(){ // Switches themes with button press
+  vim();
+};
+document.getElementById("neon").onclick = function(){ // Switches themes with button press
+  neon();
+};
+document.getElementById("rwb").onclick = function(){ // Switches themes with button press
+  rwb();
+};
+document.getElementById("lava").onclick = function(){ // Switches themes with button press
+  lava();
+};
+document.getElementById("purple").onclick = function(){ // Switches themes with button press
+  purple();
 };
 
 document.onkeydown = function(e) {
@@ -204,22 +181,25 @@ document.onkeydown = function(e) {
 	//**** SHORTCUTS ***
   // Theme hotkeys (num row/pad)
   if (key == 49){
-    dark();
+    lava();
   } else if (key == 50) { // 1
     discord();
   } else if (key == 51) { // 2
-    light();
+    rwb();
   } else if (key == 52) { // 3
     gogh();
   } else if (key == 53) { // 4
     neon();
   } else if (key == 54) { // 5
-    soft();
+    purple();
   } else if (key == 55) { // 6
     vim();
-  } else if (key == 66) {  // b shortcut - back
-			window.location.replace("index.html");
-    }
+  }
+	var fileName = location.href.split("/").slice(-1)
+
+	if (key == 66) {  // b shortcut - back
+		window.location.replace("index.html");
+  }
 
 	if (result) {
 		document.getElementById(String(result)).focus();

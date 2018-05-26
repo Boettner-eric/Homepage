@@ -3,11 +3,11 @@
 ## [Hosted on Gitub.io](https://boettner-eric.github.io/Homepage/)
 ![Template.html (github public version)](screenshots/template.png)
 
-This project is an attempt at a better desktop and mobile launch page.  It has keyboard shortcuts, nested folders, cool design and is super easy to edit.
+This project is an attempt at a better desktop and mobile launch page.  It has keyboard shortcuts, themes, nested folders, cool design and is super easy to edit.
 
 
 # Features:
-* ### Scripted page creation
+* ### Scripted page and theme creation
  The script.py file generates html files with minimal user input
 ```
     git $ python3 script.py
@@ -18,21 +18,21 @@ This project is an attempt at a better desktop and mobile launch page.  It has k
     ---------------------
     tile : 1
     url : https://Github.com
+    icon : gh
     title : Github
     subtitle : open source
-    icon : gh
     ---------------------
     tile : 2
     url : https://stackoverflow.com
+    icon : st
     title : Stack Overflow
     subtitle : Dev help
-    icon : st
     ---------------------
     tile : 3
     url : https://Google
+    icon : go
     title : Google
     subtitle : search
-    icon : go
     ---------------------
     File Created
 ```
@@ -42,31 +42,31 @@ This project is an attempt at a better desktop and mobile launch page.  It has k
 ```
   git $ python3 script.py
   type : t p (theme/webpage) - t
-  Theme Name               - example
-  Background Color (hex)   - #FFFFFF
-  Alt Background Color     - #FFFFFF
-  Accent Color             - #000000
-  Compliment Color         - #000000
-  Main Text Color          - #000000
-  Subtext Color            - #000000
+  Theme Name               - discord
+  Background Color (hex)   - #23272A
+  Alt Background Color     - #23272A
+  Accent Color             - #7289DA
+  Compliment Color         - #99AAB5
+  Main Text Color          - #99AAB5
+  Subtext Color            - #7289DA
   ---------------------------------------------------------------------------
-  function example() {
-    document.documentElement.style.setProperty('--background', '#FFFFFF');
-    document.documentElement.style.setProperty('--background-alt', '#FFFFFF');
-    document.documentElement.style.setProperty('--base-txt', '#000000');
-    document.documentElement.style.setProperty('--main-cl', '#000000');
-    document.documentElement.style.setProperty('--comp-cl', '#000000');
-    document.documentElement.style.setProperty('--sub-txt', '#000000');)
-    setCookie("example")
+  function discord() {
+    document.documentElement.style.setProperty('--background', '#23272A');
+    document.documentElement.style.setProperty('--background-alt', '#23272A');
+    document.documentElement.style.setProperty('--base-txt', '#99AAB5');
+    document.documentElement.style.setProperty('--main-cl', '#7289DA');
+    document.documentElement.style.setProperty('--comp-cl', '#99AAB5');
+    document.documentElement.style.setProperty('--sub-txt', '#7289DA');)
+    setCookie("discord")
   }
   ----------------------------------------------------------------------------
   copy and paste into the keys.js file in the section for
   themes then add a keyboard shortcut/case for the new theme
 ```
-![example theme](screenshots/example_theme.png)
+Here's the Discord theme from the example above -
+![discord theme](screenshots/discord_theme.png)
 * ### Fully customizable tiles and nested folders
    To edit a tile open template.html.  The main block of code should look like this:
-   ![back tile](screenshots/back.png)
 ```html
 <a href="index.html" id="1" class="lBox">
 	<div class="button">
@@ -77,6 +77,9 @@ This project is an attempt at a better desktop and mobile launch page.  It has k
 </a>
 ```
   - a contains the url
+  ```html
+  <a href="enter url here" id="tile number" class="lBox">
+  ```
   - h3 contains the website title,
   ```Html
   <h3>Title</h3>
@@ -119,10 +122,13 @@ This project is an attempt at a better desktop and mobile launch page.  It has k
   ![Neon Theme](screenshots/neon_theme.png)
   Or finally Discord theme
   ![Discord Theme](screenshots/discord_theme.png)
+  (The Screenshot folder has even more example themes)
   * Themes are saved as cookies and read on every reload allowing the theme to persist through folders and new instances
   * To create a theme follow the template or use script.py
-  * Cookies might not work on hosted version but do work well locally
-
+  * Cookies might not work based on your browser settings (make sure to enable cookies)
+  * Themes can also be selected from the menu
+  ![Theme Menu](screenshots/list_theme.png)
+  ![Alt Theme Menu](screenshots/list2_theme.png)
 * ### Keyboard Shortcuts
  - Homepage supports custom keyboard shortcuts for websites.  Currently index.html only contains one shortcut (b -> back to github) but keys.js contains instructions and structure for adding custom shortcuts and filters based on folder (for any new pages created in the template b -> back to index.html). See lines 115-124 to add custom shortcuts.
  - Themes are currently mapped to 1-7 for quick switches between themes
@@ -138,8 +144,8 @@ This project is an attempt at a better desktop and mobile launch page.  It has k
             } // add to this if statement for shortcuts on new folder pages
         }
  ```
- *Javascript codes for each key can be found on [this](keycode.info) awesome site
- *Key shortcuts don't work on the github hosted site unless javascript is enabled in browser
+ * Javascript codes for each key can be found on [this](keycode.info) awesome site
+ * Key shortcuts don't work on the github hosted site unless javascript is enabled in browser
 
 * ### Responsive design
  Homepage was created with mobile support first and is fully responsive.  It features one breakpoint at 650 pixels for the smallest displays but resizes well at any resolution<sup>1</sup>

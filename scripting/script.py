@@ -93,15 +93,27 @@ else:
         f.write("    <form action=\"https://google.com/search\" method=\"get\">\n")
         f.write("         <input type=\"text\" name=\"q\" placeholder=\"[search]\" id=\"search\" autocomplete=\"off\">\n")
         f.write("    </form>\n")
-        f.write("    <button id=\"night\", class=\"night\">\n")
-        f.write("    	<img src=\"src/mn.png\" style=\'max-width: 30px\'>\n")
-        f.write("    </button>\n")
+
+
+        f.write("    <div class =\"dropdown\" >\n")
+        f.write("       <div class=\"night-content\">\n")
+        f.write("           <button id=\"gogh\"> Gogh </button>\n")
+        f.write("           <button id=\"discord\"> Discord </button>\n")
+        f.write("           <button id=\"vim\"> Vim </button>\n")
+        f.write("           <button id=\"neon\"> Neon </button>\n")
+        f.write("           <button id=\"rwb\"> RWB </button>\n")
+        f.write("           <button id=\"lava\"> Lava </button>\n")
+        f.write("           <button id=\"purple\"> Purple </button>\n")
+        f.write("       </div>\n")
+        f.write("       <button id=\"night\", class=\"night\">\n")
+        f.write("           <img src=\"src/mn.png\" style=\'max-width: 30px\'>\n")
+        f.write("       </button>\n")
+        f.write("   </div>\n")
         f.write("</footer>\n")
         f.write("</body>\n")
         f.write("<script type=\"text/javascript\" src=\"keys.js\"></script>\"\n")
         f.write("</html>\n")
         print("File Created")
-
 
     else:
         num = input("num : ")
