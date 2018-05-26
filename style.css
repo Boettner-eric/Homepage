@@ -23,7 +23,40 @@ p {
 	margin-left: 45%;
 	font-size: 10px;
 }
+@media only screen
+    and (device-width : 375px)
+    and (device-height : 812px)
+    and (-webkit-device-pixel-ratio : 3) {
 
+    .button img {
+    width: 70%;
+		margin-top: 0px;
+    position: center;
+		right: 25%;
+		left: 25%;
+  }
+	p {
+		font-size: 0;
+	}
+	.grid tr td a {
+		width: 30%;
+		height: 200%;
+		left: -15px;
+		padding-top: 60px;
+	}
+	h3 {
+		margin-top: 50px;
+		font-size: 12px;
+		margin-left: 0;
+		text-align: center;
+	}
+	footer form  {
+		display: none;
+	}
+	-webkit-filter {
+		opacity: 0;
+	}
+}
 @media only screen and (max-width: 603px) { /* For narrow devices */
   .button img {
     width: 70%;
