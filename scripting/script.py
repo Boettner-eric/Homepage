@@ -3,6 +3,7 @@
 # generates a formatted html template file for boettner-eric/homepage (github)
 
 # See Readme.md for more info and detailed instructions
+import os
 i = input("type : t p (theme/webpage) - ")
 if i == "t":
     name = input("Theme Name               - ")
@@ -30,7 +31,10 @@ else:
     # g - creates a fully formatted html file with 12 tiles
 
     if x == "g":
+        file_list = os.listdir()
         filename = input("enter filename : ")
+        while filename + ".html" in file_list:
+            filename = input("enter unique filename : ")
         print("---------------------")
         num = 1
         f = open(filename + ".html", "w")
@@ -55,7 +59,10 @@ else:
             subtitle.append("")
             src.append("")
         tmp = input("number of tiles (max 12) : ")
-        max = int(tmp)
+        try:
+            max = int(tmp)
+        except:
+            max = 0
         if max > 12:
             max = 12
         num = 1
